@@ -3,13 +3,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Set API key
+# Set your own API key from openweather 
 API_key = '8f0d8e18eace091d3523bd922a52b137'
 
-# Cities to find  data for
-cities = ['Delhi', 'Mumbai', 'Chennai', 'Kolkata', 'Pune']
+# Cities to find  data for comparison
+cities = ['Bengaluru', 'Mumbai', 'Chennai', 'Hyderabad', 'Pune']
 
-# Find and store weather data
+# Find and store weather data in a new list for more usage
 weather_data = []
 for city in cities:
     url = f'https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_key}&units=metric'
@@ -28,7 +28,7 @@ for city in cities:
     else:
         print(f"Failed to fetch weather data for {city}")
 
-# Convert to DataFrame
+# Convert to DataFrame optional : if you want the table of data just print(df) after next line on 33
 df = pd.DataFrame(weather_data)
 
 # Prepare data for pie chart
